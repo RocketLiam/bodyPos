@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <ctype.h>
 
 char text[30];
 int selection;
@@ -113,16 +114,18 @@ void gate4() {
 }
 
 void gate5() {
-    int timer = 180;
+    int timer = 60;
     system("clear");
-    printf("Take some time to reflect about what you've accomplished here, and what you've overcome.\n");
+    printf("Take a minute to reflect about what you've accomplished now, and what you've overcome.\n");
     sleep(3);
     while (timer > 0) {
         system("clear");
-        printf("%d:%02d\n", timer/60, timer % 60);
+        printf("%01d:%02d\n", timer/60, timer % 60);
         sleep(1);
         timer--;
     }
+    printf(":)\n");
+    sleep(3);
 }
 
 void gate6() {
@@ -134,7 +137,54 @@ void gate7() {
 }
 
 void gate8() {
+    system("clear");
+    printf("Here you will practice making decisions for yourself\n");
+    printf("You don't need to say yes to everyone. Practice saying no, for a change.\n");
+    sleep(4);
+    yn1:
+    system("clear");
+    printf("Hey! Can you take my shift at work tonight for me? It's only 5 hours.\n");
+    printf("Yes/No\n");
+    fgets(text, sizeof(text), stdin);
+
+    for(int i = 0; text[i]; i++){
+        text[i] = tolower(text[i]);
+    }
+    if (strcmp(text, "no") == 10) {
+        printf("Nice job! You don't have to help everyone out, especially if it hurts you.\n");
+        sleep(3);
+        goto end;
+    }
+    else if (strcmp(text, "yes") == 10) {
+        printf("Did you really want to take that shift? You don't have to do things just to please other people. Help yourself out!\n");
+        sleep(3);
+    }
+    else {
+        goto yn1;
+    }
+    yn2:
+    system("clear");
+    printf("Hey, could you skip that party of yours to run get my groceries?\n");
+    printf("Yes/No\n");
+    fgets(text, sizeof(text), stdin);
     
+    for(int i = 0; text[i]; i++){
+        text[i] = tolower(text[i]);
+    }
+    if (strcmp(text, "no") == 10) {
+        printf("Nice job! You don't have to help everyone out, especially if doesn't work for you.\n");
+        sleep(3);
+        goto end;
+    }
+    else if (strcmp(text, "yes") == 10) {
+        printf("You don't have to change your plans for other people, especially if it was something important to you. Howabout we try that again?\n");
+        sleep(3);
+        goto yn1;
+    }
+    else {
+        goto yn2;
+    }
+    end:
 }
 
 int main(int argc, char const *argv[])
@@ -150,6 +200,9 @@ int main(int argc, char const *argv[])
     start:
     
     if (gate1complete && gate2complete & gate3complete && gate4complete && gate5complete && gate6complete && gate7complete && gate8complete){
+        printf("You've done it! You went through all 8 gates, and learned how to appreciate yourself for who you are.\n");
+        printf("Be proud of yourself :)\n");
+        sleep(5);
         return 0;
     }
 
