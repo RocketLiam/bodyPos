@@ -113,7 +113,16 @@ void gate4() {
 }
 
 void gate5() {
-    
+    int timer = 180;
+    system("clear");
+    printf("Take some time to reflect about what you've accomplished here, and what you've overcome.\n");
+    sleep(3);
+    while (timer > 0) {
+        system("clear");
+        printf("%d:%02d\n", timer/60, timer % 60);
+        sleep(1);
+        timer--;
+    }
 }
 
 void gate6() {
