@@ -101,7 +101,7 @@ void gate4() {
             sleep(3);
         }
         else if (strcmp(text, "2") == 10) {  
-            printf("Ok, well I think you should start to always accept the compliments given to you. They are just trying to be nice!\n");
+            printf("I think you should try to accept the compliments given to you. They are just trying to be nice!\n");
             sleep(3);
         }
         else {
@@ -207,8 +207,8 @@ int main(int argc, char const *argv[])
     }
 
     system("clear");
-    printf("You find your self sourneded by many gates, the gates read\n");
-    printf("1. The gate of Surender\n");
+    printf("You find your self surounded by many gates. The gates read:\n");
+    printf("1. The gate of Surrender\n");
     printf("2. The gate of Equate\n");
     printf("3. The gate of Catalog\n");
     printf("4. The gate of Trust\n");
