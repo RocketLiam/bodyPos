@@ -51,7 +51,7 @@ void gate3() {
     system("clear");
     printf("Here you get to write all of your wonderful traits!\n");
     printf("I'll give you a notecard, just write down 15 positive things about yourself!\n");
-    sleep(5);
+    sleep(3);
     char trait[15][30] = {};
     notecard:
     system("clear");
@@ -64,7 +64,7 @@ void gate3() {
     }
     if (traits != 15) {
         fgets(text, sizeof(text), stdin);
-        strcpy(trait[traits], text);
+        strncpy(trait[traits], text, strlen(text)-1);
         traits+=1;
         goto notecard;
     }
@@ -100,7 +100,7 @@ void gate4() {
             sleep(3);
         }
         else if (strcmp(text, "2") == 10) {  
-            printf("Ok, well I think you should start to always accept the compliments given to you. They are just trying to be nice!");
+            printf("Ok, well I think you should start to always accept the compliments given to you. They are just trying to be nice!\n");
             sleep(3);
         }
         else {
