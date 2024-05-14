@@ -47,12 +47,32 @@ void gate2() {
 }
 
 void gate3() {
-    
+    int traits = 0;
+    system("clear");
+    printf("Here you get to write all of your wonderful traits!\n");
+    printf("I'll give you a notecard, just write down 15 positive things about yourself!\n");
+    sleep(5);
+    char trait[15][30] = {};
+    notecard:
+    system("clear");
+    for (int i = 0; i < 15; i++) {
+        printf("%d.%s\n", i+1, trait[i]);
+    }
+    if (traits == 15) {
+        printf("Now look at all of these positive traits you were able to come up with!\n");
+        sleep(5);
+    }
+    if (traits != 15) {
+        fgets(text, sizeof(text), stdin);
+        strcpy(trait[traits], text);
+        traits+=1;
+        goto notecard;
+    }
 }
 
 void gate4() {
     system("clear");
-    printf("Your hair looks good today.\n");
+    printf("Your hair looks good today!\n");
     printf("Do you feel like this is true?\n");
     printf("1.Yes\n");
     printf("2.No\n");
@@ -68,7 +88,7 @@ void gate4() {
     }
     else if (strcmp(text, "2") == 10) {  
         printf("But your hair does look good! Let's try another one.\n");
-        printf("Your facial structure is very pleasent\n");
+        printf("Your facial structure is very pleasant\n");
         printf("1.Yes\n");
         printf("2.No\n");
 
