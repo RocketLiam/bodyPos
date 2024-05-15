@@ -24,9 +24,8 @@ void gate2() {
     fgets(text, sizeof(text), stdin);
     rewind:
     printf("Do you feel like you are worse in the world because they exist?\n");
-    printf("1.yes\n");
-    printf("2.no\n");
-     fgets(text, sizeof(text), stdin);
+    printf("Yes/No\n");
+    fgets(text, sizeof(text), stdin);
     if (strcmp(text, "yes") == 10) {
         system("clear");
         printf("Don't do this to your self you add a ton of value to the world.\n");
@@ -71,40 +70,40 @@ void gate4() {
     system("clear");
     printf("Your hair looks good today!\n");
     printf("Do you feel like this is true?\n");
-    printf("1.Yes\n");
-    printf("2.No\n");
+    printf("Yes/No\n");
         
     gate4choice1:
     fgets(text, sizeof(text), stdin);
     
 
-    if (strcmp(text, "1") == 10) {
+    if (strcmp(text, "yes") == 10) {
         system("clear");
         printf("Good Job Taking the Compliment!\n");
         sleep(3);
     }
-    else if (strcmp(text, "2") == 10) {  
+    else if (strcmp(text, "no") == 10) {  
         printf("But your hair does look good! Let's try another one.\n");
         printf("Your facial structure is very pleasant\n");
-        printf("1.Yes\n");
-        printf("2.No\n");
+        printf("Yes/No\n");
 
         gate4choice2:
         fgets(text, sizeof(text), stdin);
 
-        if (strcmp(text, "1") == 10) {
+        if (strcmp(text, "yes") == 10) {
             printf("Good Job Taking the Compliment!\n");
             sleep(3);
         }
-        else if (strcmp(text, "2") == 10) {  
+        else if (strcmp(text, "no") == 10) {  
             printf("I think you should try to accept the compliments given to you. They are just trying to be nice!\n");
             sleep(3);
         }
         else {
+            printf("please answer yes or no\n");
             goto gate4choice2;
         }
     }
     else {
+        printf("please answer yes or no\n");
         goto gate4choice1;
     }
 }
@@ -240,6 +239,7 @@ void gate8() {
         goto yn1;
     }
     else {
+        printf("please answer yes or no\n");
         goto yn2;
     }
     end:
