@@ -178,14 +178,14 @@ void gate7() {
     system("clear");
     printf("what is your name?\n");
     fgets(thing1, sizeof(thing1), stdin);
-    printf("What is the thing that best discribes you?\n");
+    printf("What is the thing that best describes you?\n");
     fgets(thing2, sizeof(thing2), stdin);
     printf("What is your favorite thing to do?\n");
     fgets(thing3, sizeof(thing3), stdin);
     thing1[strlen(thing1) - 1] = '\0';
     thing2[strlen(thing2) - 1] = '\0';
     thing3[strlen(thing3) - 1] = '\0';
-    printf("%s is a person this is very %s and is very good at %s\n",thing1,thing2,thing3);
+    printf("%s is a person that is very %s and is very good at %s\n",thing1,thing2,thing3);
     sleep(5);
 }
 
