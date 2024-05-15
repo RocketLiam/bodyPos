@@ -111,7 +111,7 @@ void gate5() {
     sleep(3);
     while (timer > 0) {
         system("clear");
-        printf("%01d:%02d\n", timer/60, timer % 60);
+        printf("%01d:%02d\n", timer / 60, timer % 60);
         sleep(1);
         timer--;
     }
@@ -120,7 +120,54 @@ void gate5() {
 }
 
 void gate6() {
-    
+    system("clear");
+    printf("When you are setting goals for yourself, it can be easy to get carried away.\n");
+    sleep(1);
+    printf("In order to make your goals realistic, you need to have a SMART one.\n");
+    sleep(1);
+    printf("SMART is an acronym, standing for:\n");
+    sleep(1);
+    printf("Specific\n");
+    sleep(1);
+    printf("Measurable\n");
+    sleep(1);
+    printf("Achievable\n");
+    sleep(1);
+    printf("Relevant\n");
+    sleep(1);
+    printf("Time Based\n");
+    sleep(2);
+    system("clear");
+    goto quiz;
+
+    retell:
+    system("clear");
+    printf("When you are setting goals for yourself, it can be easy to get carried away.\n");
+    printf("In order to make your goals realistic, you need to have a SMART one.\n");
+    printf("SMART is an acronym, standing for:\n");
+    printf("\nSpecific\n");
+    printf("Measurable\n");
+    printf("Achievable\n");
+    printf("Relevant\n");
+    printf("Time Based\n");
+    sleep(2);
+    system("clear");
+
+    quiz:
+    printf("So, knowing that, what kind of goals should you make from now on? (use the acronym)\n");
+    fgets(text, sizeof(text), stdin);
+
+    for(int i = 0; text[i]; i++){
+        text[i] = tolower(text[i]);
+    }
+    if (strcmp(text, "smart") != 10) {
+        printf("Incorrect, no worries, let's look at the info again\n");
+        sleep(2);
+        goto retell;
+    }
+    else {
+        printf("Correct! Remember to use SMART goals in the future\n");
+    }
 }
 
 void gate7() {
