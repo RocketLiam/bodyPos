@@ -10,31 +10,6 @@ char text[30];
 int selection;
 bool loop = true;
 
-enum gatesNames {
-    surender = 1,
-    equate = 2,
-    catalog = 3,
-    trust = 4,
-    honor = 5,
-    desire = 6,
-    identity = 7,
-    negative = 8
-};
-
-void getNumber() {
-    loop = true;
-    while (loop) {
-        fgets(text, sizeof(text), stdin);
-        if (atoi(text) != NULL)
-        {
-            selection = atoi(text);
-            loop = false;
-        } else {
-            printf("please type a number\n");
-        }
-    }
-}
-
 void gate1() {
     system("clear");
     printf("Type down all of your negitive thoughts they won't be recored just let it all go\n");
@@ -149,7 +124,21 @@ void gate6() {
 }
 
 void gate7() {
-    
+    char thing1[30];
+    char thing2[30];
+    char thing3[30];
+    system("clear");
+    printf("what is your name?\n");
+    fgets(thing1, sizeof(thing1), stdin);
+    printf("What is the thing that best discribes you?\n");
+    fgets(thing2, sizeof(thing2), stdin);
+    printf("What is your favorite thing to do?\n");
+    fgets(thing3, sizeof(thing3), stdin);
+    thing1[strlen(thing1) - 1] = '\0';
+    thing2[strlen(thing2) - 1] = '\0';
+    thing3[strlen(thing3) - 1] = '\0';
+    printf("%s is a person this is very %s and is very good at %s\n",thing1,thing2,thing3);
+    sleep(5);
 }
 
 void gate8() {
