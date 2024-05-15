@@ -22,20 +22,25 @@ void gate2() {
     system("clear");
     printf("Who is someone that you look up to\n");
     fgets(text, sizeof(text), stdin);
+    rewind:
     printf("Do you feel like you are worse in the world because they exist?\n");
     printf("1.yes\n");
     printf("2.no\n");
      fgets(text, sizeof(text), stdin);
-    if (strcmp(text, "1") == 10) {
+    if (strcmp(text, "yes") == 10) {
         system("clear");
         printf("Don't do this to your self you add a ton of value to the world.\n");
         sleep(3);
-    }
-    if (strcmp(text, "2") == 10) {
+    } else if (strcmp(text, "no") == 10) {
+            system("clear");
+            printf("Good you are awesome and don't need to compare your self to them\n");
+            sleep(3);
+    } else {
         system("clear");
-        printf("Good you are awesome and don't need to compare your self to them\n");
-        sleep(3);
+        printf("please answer yes or no\n");
+        goto rewind;
     }
+    
 }
 
 void gate3() {
