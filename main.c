@@ -167,6 +167,7 @@ void gate6() {
     }
     else {
         printf("Correct! Remember to use SMART goals in the future\n");
+        sleep(2);
     }
 }
 
@@ -252,6 +253,7 @@ int main(int argc, char const *argv[])
     start:
     
     if (gate1complete && gate2complete & gate3complete && gate4complete && gate5complete && gate6complete && gate7complete && gate8complete){
+        system("clear");
         printf("You've done it! You went through all 8 gates, and learned how to appreciate yourself for who you are.\n");
         printf("Be proud of yourself :)\n");
         sleep(5);
