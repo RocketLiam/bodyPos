@@ -50,6 +50,7 @@ void gate2() {
     printf("Do you feel like you are worse in the world because they exist?\n");
     printf("1.yes\n");
     printf("2.no\n");
+     fgets(text, sizeof(text), stdin);
     if (strcmp(text, "1") == 10) {
         system("clear");
         printf("Don't do this to your self you add a ton of value to the world.\n");
